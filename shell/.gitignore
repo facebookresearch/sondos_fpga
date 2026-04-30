@@ -1,0 +1,14 @@
+/*.jou
+/*.log
+/*.str
+**/vnc_logs
+**/ci_scripts/verible_*.txt
+transcript
+**/sim/modelsim.ini
+**/sim/*.txt
+**/sim/*.vcd
+**/sim/*.wlf
+*.code-workspace
+**/work
+**.simvision
+**/.Xil/

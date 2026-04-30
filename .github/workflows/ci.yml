@@ -1,0 +1,37 @@
+# SPDX-License-Identifier: MIT
+# (c) Meta Platforms, Inc. and affiliates.
+name: ci
+on:
+  push:
+    branches: [main, 'release/**']
+  pull_request:
+    branches: [main]
+jobs:
+
+  spdx-headers:
+    name: SPDX header presence
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: Check SPDX-License-Identifier presence
+        # Every source file with a code-bearing extension must carry the
+        # SPDX-License-Identifier line. Generic — no internal-only denylist.
+        run: |
+          set -e
+          missing=0
+          while IFS= read -r f; do
+            if ! grep -q 'SPDX-License-Identifier:' "$f"; then
+              echo "MISSING SPDX header: $f"
+              missing=$((missing + 1))
+            fi
+          done < <(git ls-files \
+            '*.sv' '*.v' '*.vh' '*.svh' \
+            '*.tcl' '*.xdc' \
+            '*.py' '*.sh' '*.bat' \
+            '*.c' '*.cpp' '*.h' \
+            | grep -v '^staging/')
+          if [ $missing -gt 0 ]; then
+            echo "FAIL: $missing file(s) missing SPDX header."
+            exit 1
+          fi
+          echo "OK: all source files carry SPDX-License-Identifier."
