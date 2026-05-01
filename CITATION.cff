@@ -1,0 +1,42 @@
+# SPDX-License-Identifier: MIT
+# CITATION.cff — GitHub's machine-readable citation file format.
+# https://citation-file-format.github.io/
+cff-version: 1.2.0
+message: "If you use sondos_fpga in academic work, please cite it as below."
+title: "sondos_fpga: An open-source FPGA shell and library for AMD/Xilinx host and remote platforms"
+type: software
+authors:
+  - family-names: Hamed
+    given-names: Ezz
+  - family-names: Ender
+    given-names: Ian
+  - family-names: Graf
+    given-names: Chris
+version: "0.1.0"
+date-released: "2026-04-29"
+url: "https://github.com/facebookresearch/sondos_fpga"
+license: MIT
+keywords:
+  - FPGA
+  - SystemVerilog
+  - Vivado
+  - PCIe
+  - DMA
+  - Aurora
+  - QDMA
+  - hardware-software co-design
+  - AMD-Xilinx
+  - sondos
+preferred-citation:
+  type: software
+  authors:
+    - family-names: Hamed
+      given-names: Ezz
+    - family-names: Ender
+      given-names: Ian
+    - family-names: Graf
+      given-names: Chris
+  title: "sondos_fpga: An open-source FPGA shell and library for AMD/Xilinx host and remote platforms"
+  year: 2026
+  version: "0.1.0"
+  url: "https://github.com/facebookresearch/sondos_fpga"

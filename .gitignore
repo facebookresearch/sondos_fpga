@@ -1,0 +1,31 @@
+
+# --- sondos_opensource_prep additions ---
+# Local Vivado build outputs (created by scripts/build_demo.{sh,ps1}
+# and by direct vivado -source build.tcl runs)
+.builds/
+streamer_demo/
+streamer_demo_*.bin
+streamer_demo_*.mcs
+streamer_demo_*.prm
+# Vivado scratch
+.Xil/
+*.jou
+*.log
+vivado_*.backup.jou
+vivado_*.backup.log
+.cache/
+.hbs/
+# Vivado project / runs
+*.runs/
+*.sim/
+*.cache/
+*.hw/
+*.ip_user_files/
+*.srcs/sources_1/imports/
+*.srcs/sources_1/.searches/
+# Python caches
+__pycache__/
+*.pyc
+# OS junk
+.DS_Store
+Thumbs.db
